@@ -1,0 +1,22 @@
+<head>
+  <title>KKDD Records</title>
+</head>
+
+<body>
+  <h1>KKDD</h1>
+  {{> albums}}
+</body>
+
+<template name="albums">
+  <h2>Albums</h2>
+  {{#each albums}}
+  <h3>{{title}}</h3>
+  {{!#each tracks}}
+  {{!> track}}
+  {{!/each}}
+  {{/each}}
+</template>
+
+<template name="tracks">
+  <h3>{{position}}. {{title}}</h3>
+</template>

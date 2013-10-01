@@ -33,13 +33,12 @@ Meteor.startup(function () {
       }
     ];
 
+    console.log("BOOTSTRAP: Seeding database with " + data.length + " albums")
+
     for (var i = 0; i < data.length; i++) {
       {
-        var album_id = Albums.insert({band: data[i].band, title: data[i].title, year: data[i].year});
-        var tracks = data[i].tracks;
-        for (var j = 0; j < tracks.length; j++) {
-          Tracks.insert({position: tracks[j].position, title: tracks[j].title, url: tracks[j].url});
-        }
+        var album_id = Albums.insert({band: data[i].band, title: data[i].title, year: data[i].year, tracks: data[i].tracks});
+        console.log("BOOTSTRAP: added album_id " + album_id);
       }
     }
   }
