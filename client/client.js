@@ -1,3 +1,3 @@
 Template.albums.albums = function() {
-  return Albums.find();
+  return Albums.find({}, {sort: {band: 1}});
 };

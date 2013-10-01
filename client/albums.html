@@ -10,13 +10,13 @@
 <template name="albums">
   <h2>Albums</h2>
   {{#each albums}}
-    <h3>{{title}} - {{year}}</h3>
-    {{#each tracks}}
-      {{> track}}
-    {{/each}}
+    <div class="album">
+      <h3>{{band}} - {{title}}{{#if year}} - {{year}}{{/if}}</h3>
+      {{#each tracks}}
+        <ul class="tracks">
+          <li class="track">{{position}}. {{title}}</li>
+        </ul>
+      {{/each}}
+    </div>
   {{/each}}
-</template>
-
-<template name="track">
-  <h3>{{position}}. {{title}}</h3>
 </template>
