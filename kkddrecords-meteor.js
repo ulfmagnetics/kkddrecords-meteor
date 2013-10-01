@@ -1,15 +1,9 @@
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to kkddrecords-meteor.";
-  };
+Albums = new Meteor.Collection("albums");
 
-  Template.hello.events({
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
+if (Meteor.isClient) {
+  Template.albums = function() {
+    return Albums.find();
+  }
 }
 
 if (Meteor.isServer) {
